@@ -1,0 +1,179 @@
+html, body {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: #009688;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+form , .forms {
+  background: white;
+  width: 40%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  font-family: open sans;
+  position: relative;
+  color: #333;
+  border-radius: 10px;
+}
+form header, .forms header {
+  background: #ffb03b;
+  padding: 30px 20px;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 600;
+  border-radius: 10px 10px 0 0;
+  font-family: Open sans;
+  text-align: center;
+}
+form label, .forms label {
+  margin-left: 20px;
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  position: relative;
+  margin-right: 2em;
+}
+form label span,.forms label span {
+  color: #FFB03A;
+  font-size: 1.2em;
+  /* position: absolute; */
+  /* left: 2.3em; */
+  /* top: -10px; */
+}
+form input, .forms input {
+  /* display: block; */
+  /* width: 78%; */
+  /* margin-left: 20px; */
+  padding: 5px 20px;
+  font-size: 1em;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+form  .help ,.forms .help {
+  margin-left: 20px;
+  font-size: 0.8em;
+  color: #777;
+}
+.btn {
+  width: 50% !important;
+  position: relative;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+  left: 25%;
+  transform: translate(-50%, 0);
+  font-family: inherit;
+  color: white;
+  background: #FFB03B;
+  /* outline: none!important; */
+  border: none;
+  padding: 5px 15px !important;
+  font-size: 1.3em !important;
+  font-weight: 400;
+  border-radius: 3px !important;
+  box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.4);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  font-family: lato;
+}
+ form #btn:hover ,.forms #btn:hover {
+  background: #E68900;
+}
+
+a {text-decoration: none;color: white;}
+
+div.createprofile {
+    /* top: 200px; */
+    width: 100%;
+    position: absolute;
+    top: -220px;
+    visibility: hidden;
+}
+
+.reg1.forms {
+    width: 100%;
+    height: 100%;
+}
+
+.nothidden {
+  /* position: initial !important; */
+  visibility: visible !important;
+}
+
+.hidden{
+  position: absolute !important;
+  visibility: hidden !important; 
+}
+
+.createprofile input {
+    /* float: left; */
+    /* display: inline-block; */
+    margin-top: 2%;
+    width: initial;
+    width: 40%;
+}
+
+.createprofile label {
+    /* float: left; */
+    width: 30%;
+    /* margin-left: 5%; */
+    /* margin-right: 13%; */
+    margin-top: 2%;
+    /* display: inline-block; */
+}
+
+.reg1 input , .login input {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.reg1 label ,.login label{
+    margin-left: 3em;
+}
+
+.reg1 .help, .login .help {
+    margin-left: 3.5em;
+}
+
+#hideme {
+    width: 30%;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    left: 15%;
+    transform: translate(-50%, 0);
+    font-family: inherit;
+    color: white;
+    background: #FFB03B;
+    outline: none;
+    border: none;
+    padding: 5px 15px;
+    font-size: 1.3em;
+    font-weight: 400;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.4);
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    font-family: lato;
+}
+
+#drop-area label#iamge {
+    width: 93%;
+    text-align: center;
+    background-color: rgba(191, 191, 191, 0.19);
+    height: 50px;
+    /* margin: 0 auto; */
+    border: 2px dotted rgba(128, 128, 128, 0.36);
+}
+
+#iamge div {
+    margin-top: 3%;
+}

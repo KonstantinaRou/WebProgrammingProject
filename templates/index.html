@@ -1,0 +1,166 @@
+<html>
+<head>
+  <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/script.js')}}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+</head>
+<body>
+  <nav class="navigation group">
+    <ul class="group">
+      <li> <a href="#"></a>ABOUT</li>
+      <li > <a href="#"></a>PORTFOLIO</li>
+      <li><a href="#"></a>CONTACT</li>
+      <li  id="login"><a href="login.html"></a>Log in</li>
+      <li id= "search">
+      	<form>
+             <input type="text" placeholder="Search user" required> 
+             <button id="search_btn"> <i class="fa fa-search" aria-hidden="true"></i></button>    
+        </form>
+      </li>
+    </ul>
+  </nav>
+<section>
+  <div  class="wrapper group">
+    <h2 class="section">ABOUT ME </h2>
+    <div class="photo colume"    {%if admin%}id="drop-area"{%endif%} >
+        <img src="{{ url_for('uploaded_file', filename=profile.imageurl) }}"/>
+  {%if admin%} 
+  <h3 class="drop-text">Drag and Drop Images Here</h3>
+  {%endif%}
+    </div>
+    <div class="inform colume">
+        {% if admin %}
+        <button id="edit_btn">  Edit</button>
+
+        
+      
+        <b>WHAT I KNOW:</b><br>
+         <div class="info">
+            {{ profile.description }}
+        </div>
+   
+        <div class="input_edit" >
+            <input id="description" name="description" type ="text" placeholder=" {{ profile.description }}" />
+        </div>
+        
+        <br>
+      
+       
+        <b>COMPLETE NAME:</b> 
+        <div class="info">
+          {{ profile.name }} {{ profile.surname }}
+          
+          <br>
+        </div>
+
+        <div class="input_edit">
+            <input id="name" name="name" type ="text" placeholder="{{ profile.name }} " />
+            <input id="surname" name="surname" type ="text" placeholder="{{ profile.surname }}" />
+        </div>
+      
+      <br>
+      
+
+      
+      <b>BIRTHDATE:</b> 
+      <div class="info">
+          {{ profile.birthdate }}<br>
+      </div>
+
+      <div class="input_edit">
+         <input id="birthdate" name="birthdate" type ="text" placeholder="{{ profile.birthdate }}" />
+      </div>
+      
+      <br>
+      
+
+      <b>WEBSITE:</b> 
+      <div class="info">
+          <a href="{{ profile.website }}"> {{ profile.website }}</a><br>
+      </div>
+
+      <div class="input_edit">
+         <input id="website" name="website" type ="text" placeholder="{{profile.website}}" />
+      </div>
+      <br>
+      
+
+      <b>ADDRESS:</b> 
+      <div class="info">
+          {{ profile.address }}<br>
+      </div>
+
+
+      <div class="input_edit">
+         <input id="address" name="address" type ="text" placeholder="{{ profile.address }}" />
+      </div>
+      <br>
+      
+      <b>TELEPHONE:</b> 
+      <div class="info">
+          {{ profile.telephone }}<br>
+      </div>
+
+
+      <div class="input_edit">
+        <input id="telephone" name="telephone" type ="text" placeholder=" {{ profile.telephone }}" />
+      </div>
+      <br>
+   
+      {%else%}
+      
+      <b>COMPLETE NAME:</b> 
+      {{ profile.name }} {{ profile.surname }}
+      <br><br>
+      
+      <b>BIRTHDATE:</b> 
+      {{ profile.birthdate }}
+      <br><br>
+      
+      <b>WEBSITE:</b> 
+      <a href="{{ profile.website }}"> 
+      {{ profile.website }}</a> <br><br>
+      
+      <b>ADRESS:</b> 
+      {{ profile.address }} 
+      <br><br>
+      
+      <b>TELEPHONE:</b> 
+      {{ profile.telephone }}
+      <br><br>
+    {% endif%}
+    
+    </div>
+    <div class=" colume">
+    {%if admin%}
+    <div id="message_box">
+    {% for msg in message %}
+    <div class="wrapper-msg">
+      <i class="fa fa-comment" aria-hidden="true"></i> 
+      <div id="ad">Admin says : </div> 
+      <div>{{msg.message}}</div> <br>
+    
+    </div>
+    {% endfor %}
+    </div>
+    {%endif%}
+    </div>
+  </div>
+</section>
+
+{% if weather and admin%}
+<button id="show_weather" onclick="showWheather()">Weather</button>
+<div class="makeHidden" id="weather">
+  {% for result in weather %}
+    {{result.text}}
+    <br>
+  {% endfor %}
+</div>
+  {% endif %}
+
+</body>
+</html>

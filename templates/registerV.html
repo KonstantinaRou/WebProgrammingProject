@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CV</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="static/css/style_login.css">
+   <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js')}}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/script.js')}}"></script>
+</head>
+<body>    
+  <form id="account">
+      <div  class="reg1 forms">
+        <header>Create your account</header>
+        <label>Email<span>*</span></label>
+        <input name="email" />
+        <div class="error_msg help" id="email"></div>
+        
+        <label>Password <span>*</span></label>
+        <input name="password" type="password" />
+        <div class="error_msg help" id="password"></div>
+        
+        <label>Repeat password <span>*</span></label>
+        <input name="repassword" type="password"/>
+        <div class="error_msg help" id="repassword"></div>
+
+        <input type="button" onclick="createAccount()" value="Sign up " class="btn" />
+      </div>
+
+  </form>
+
+
+
+  <form id="profile">
+
+   <div class="createprofile forms hidden">
+    <header>Create your profile</header>
+    
+    <label>Tell us who you are</label>
+    <input name="description"/>
+    <!-- <div class="help">At least 6 character</div> -->
+
+
+    <label>Your name:</label>
+    <input name="name"/>
+    <div class="error_msg" id="name"></div>
+   
+    <label>Your surname</label>
+    <input name="surname"/>
+     <div class="error_msg" id="surname"></div>
+    
+
+    <label>Your Birthdate</label>
+    <input name="birthdate"/>
+    <div class="error_msg" id="birthdate"></div>
+
+    <label>Your oficial website</label>
+    <input name="website"/>
+    <div class="error_msg" id="website"></div>
+
+    <label>Your address</label>
+    <input name="address"/>
+    
+    <label>Your telephone number</label>
+    <input name="telephone"/>
+    
+    
+    
+
+    <input type="button" onclick="createProfile()" value="Create Account  " />
+    </div>
+  </form>  
+</body>
+</html>
